@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "/public")));
-mongoose.connect('mongodb://localhost:27017/todoDB');
+mongoose.connect('mongodb+srv://admin-aradhya:test-123@listcluster.lhfjc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/todoDB');
 
 // DataBase Management
 const todoSehema = new mongoose.Schema({
@@ -123,8 +123,14 @@ app.post("/:param/delete", (req, res) => {
     });
 });
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port);
+
 // listening to port localhost:3000
-app.listen(3000 || process.env.PORT, () => {
+app.listen(3000 || port, () => {
     console.log("Server has started");
 });
 
