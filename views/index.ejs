@@ -1,0 +1,42 @@
+<%- include("templates/header") -%>
+
+    <div class="box" id="heading">
+        <h1>
+            <%= d%>
+            <% if(d==""){ %>
+                Today
+            <% } %>
+        </h1>
+    </div>
+
+    <div class="box">
+        <% var act = "/delete/delete"; %>
+        <% if(d!=""){ %>
+        <% act = "/"+d+"/delete"; %>
+        <% } %>
+
+        <% for (let i = 0; i < items.length; i++){ %>
+            <form action="<%= act %>" method="post">
+                <div class="item">
+                    <input type="checkbox" name="checkbox" id="checkbox" value="<%= items[i]._id%>" onChange="this.form.submit()">
+                    <p>
+                        <%= items[i].work %>
+                    </p>
+                </div>
+                <input type="hidden" name="listname" value=<%= d %> ></input>
+            </form>
+        <% } %>
+
+        <% let val="/"; %>
+        <% if(d!=""){ %>
+        <%    val="/"+d; %>
+        <% } %>
+
+        <form action=<%= val%> class="item" method="post">
+            <input type="text" name="in" value="" autocomplete="off">
+            <button type="submit">🧧</button>
+        </form>
+
+    </div>
+
+    <%- include("templates/footer") -%>
