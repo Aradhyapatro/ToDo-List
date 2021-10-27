@@ -1,6 +1,9 @@
 # ToDo-List
 -A Completed ToDo list which  anyone can use
 
+# MongoDB
+-MongoDB needs to be installed
+
 # How to use
 - run nodemon
 - or
