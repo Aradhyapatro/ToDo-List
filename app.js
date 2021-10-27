@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "/public")));
-mongoose.connect('mongodb+srv://<user name>:<password>@listcluster.lhfjc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/todoDB');
+mongoose.connect('mongodb://localhost:27017/todoDB');
 
 // DataBase Management
 const todoSehema = new mongoose.Schema({
