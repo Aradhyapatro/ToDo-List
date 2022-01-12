@@ -17,4 +17,4 @@
 - localhost:3000/college
 
 
-My Deployed version of the To-Do list : https://aradhyatodolist.herokuapp.com/class
+My Deployed version of the To-Do list : https://aradhyatodolist.herokuapp.com
